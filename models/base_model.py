@@ -2,7 +2,7 @@
 """BaseModel that defines all common attributes/methods for AirBnB clone"""
 import uuid
 from datetime import datetime
-
+from models import storage
 
 class BaseModel:
     """base class"""
@@ -12,6 +12,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
+            storage.new(self)
         else:
             kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
                                                      '%Y-%m-%dT%H:%M:%S.%f')
@@ -27,6 +28,7 @@ class BaseModel:
     def save(self):
         """Updates updated_at to a new time"""
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values"""
