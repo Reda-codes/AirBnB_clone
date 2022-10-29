@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module that defines a classthat serializes instances to a JSON file and deserializes JSON file to instances"""
+"""
+Module that defines a classthat serializes instances
+to a JSON file and deserializes JSON file to instances
+"""
 import json
 
 
@@ -38,6 +41,6 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r') as f:
                 tmp = json.load(f)
                 for key, val in tmp.items():
-                        self.all()[key] = cls[val['__class__']](**val)
+                    self.all()[key] = cls[val['__class__']](**val)
         except FileNotFoundError:
             pass

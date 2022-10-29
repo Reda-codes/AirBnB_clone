@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """ Console Module """
 import cmd
 
@@ -27,6 +26,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """ emptyline method of CMD """
         pass
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
