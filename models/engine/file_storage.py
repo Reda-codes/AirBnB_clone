@@ -38,7 +38,7 @@ class FileStorage:
         from models.place import Place
         from models.review import Review
 
-        classes = {
+        cls = {
                     'BaseModel': BaseModel,
                     'User': User,
                     'Place': Place,
