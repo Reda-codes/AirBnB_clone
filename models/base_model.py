@@ -24,7 +24,8 @@ class BaseModel:
 
     def __str__(self):
         """method returns the string representation of the object"""
-        return '[BaseModel] (' + str(self.id) + ')' + ' ' + str(self.__dict__)
+        imp = (str(type(self)).split('.')[-1]).split('\'')[0]
+        return '[{}] ({}) {}'.format(imp, self.id, self.__dict__)
 
     def save(self):
         """Updates updated_at to a new time"""

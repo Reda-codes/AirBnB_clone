@@ -24,6 +24,7 @@ class HBNBCommand(cmd.Cmd):
                'Review': Review,
                'State': State
               }
+    commands = {}
 
     def do_quit(self, command):
         """ Method to exit the console"""
