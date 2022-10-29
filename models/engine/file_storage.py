@@ -28,9 +28,10 @@ class FileStorage:
     def reload(self):
         """ deserializes the JSON file to __objects"""
         from models.base_model import BaseModel
+        from models.user import User
 
         cls = {
-                    'BaseModel': BaseModel
+                    'BaseModel': BaseModel, 'User': User
                   }
         try:
             tmp = {}

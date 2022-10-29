@@ -12,14 +12,12 @@ class TestBaseModel(unittest.TestCase):
 
     @classmethod
     def setUpClass(clss):
-        """ """
         clss.new = BaseModel()
-        clss.new.name = "RedRed"
+        clss.new.name = "redred"
         clss.new.my_num = 2020
 
     @classmethod
     def tearDownClass(clss):
-        """ """
         del clss.new
         try:
             os.remove("file.json")
