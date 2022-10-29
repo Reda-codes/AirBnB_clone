@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Console Module """
+import sys
 import cmd
 from models.base_model import BaseModel
 from models import storage
@@ -13,7 +14,7 @@ from models.state import State
 
 class HBNBCommand(cmd.Cmd):
     """ Entry point of the command interpreter"""
-    prompt = '(hbnb) '
+    prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
     intro = ''
     classes = {
                'BaseModel': BaseModel, 
@@ -45,6 +46,17 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """ emptyline method of CMD """
         pass
+
+    def preloop(self):
+        """ """
+        if not sys.__stdin__.isatty():
+            print('(hbnb)')
+
+    def postcmd(self, stop, line):
+        """ """
+        if not sys.__stdin__.isatty():
+            print('(hbnb) ', end='')
+        return stop
 
     def do_create(self, args):
         """ Creates a new instance of BaseModel """

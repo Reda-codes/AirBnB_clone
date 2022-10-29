@@ -7,20 +7,20 @@ import json
 
 
 class FileStorage:
-    """This class manages storage in JSON format"""
+    """storage managing class"""
     __file_path = 'file.json'
     __objects = {}
 
     def all(self):
-        """Returns a dictionary of objects currently in storage"""
+        """Returns currently storage"""
         return FileStorage.__objects
 
     def new(self, obj):
-        """Adds new object to storage dictionary"""
+        """Adds new object"""
         self.all().update({obj.to_dict()['__class__'] + '.' + obj.id: obj})
 
     def save(self):
-        """serializes __objects to the JSON file (path: __file_path)"""
+        """serializes objects to JSON file"""
         with open(FileStorage.__file_path, 'w') as f:
             tmp = {}
             tmp.update(FileStorage.__objects)
@@ -29,7 +29,7 @@ class FileStorage:
             json.dump(tmp, f)
 
     def reload(self):
-        """ deserializes the JSON file to __objects"""
+        """ deserializes JSON file to __objects"""
         from models.base_model import BaseModel
         from models.user import User
         from models.state import State
