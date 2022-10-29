@@ -4,11 +4,26 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+
 
 class HBNBCommand(cmd.Cmd):
     """ Entry point of the command interpreter"""
     prompt = '(hbnb) '
-    classes = {'BaseModel': BaseModel, 'User': User}
+    intro = ''
+    classes = {
+               'BaseModel': BaseModel, 
+               'User': User,
+               'Amenity': Amenity,
+               'City': City,
+               'Place': Place,
+               'Review': Review
+               'State': State,
+              }
 
     def do_quit(self, command):
         """ Method to exit the console"""
