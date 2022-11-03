@@ -5,10 +5,8 @@ width:100%;
 position:fixed;
 border-bottom: 1px solid #CCCCCC;
 top:0;
-}
-
-.headerLogo {
-vertical-align: middle;
-margin-left: 20px;
-margin-top: 5px;
+padding-left: 20px;
+display:flex;
+align-items:center;
+justify-content:start;
 }
