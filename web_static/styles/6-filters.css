@@ -30,7 +30,7 @@ width: 25%;
 border-right: solid 1px #DDDDDD;
 }
 
-.amenities {
+.filters .amenities {
 height: 100%;
 width: 25%;
 }
@@ -61,6 +61,7 @@ display: block;
 
 .amenities:hover .popover {
 display: block;
+z-index: 2;
 }
 
 ul {

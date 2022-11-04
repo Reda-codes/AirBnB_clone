@@ -66,3 +66,58 @@ font-weight: bold;
 p {
 margin-top: 0px;
 }
+
+article .amenities {
+margin-top: 40px;
+}
+
+article .amenities ul {
+border: 0px;
+padding-top: 5px;
+padding-bottom: 0px;
+}
+
+article .amenities ul li {
+    height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    padding: 5px;;
+}
+
+article .amenities h2 {
+font-size: 16px;
+text-align: left;
+border-bottom: solid #DDDDDD 1px;
+padding-bottom: 10px;
+margin-bottom: 5px;
+}
+
+.icon {
+height: 100%;
+}
+
+.reviews {
+margin-top: 40px;
+}
+
+.reviews h2{
+font-size: 16px;
+text-align: left;
+border-bottom: solid #DDDDDD 1px;
+padding-bottom: 10px;
+margin-bottom: 5px;
+
+}
+
+.reviews ul {
+border: 0px;
+}
+
+.reviews ul h3 {
+margin: 0px;
+font-size: 14px;
+}
+
+.reviews ul p {
+font-size: 12px;
+}
